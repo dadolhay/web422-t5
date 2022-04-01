@@ -1,0 +1,23 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div style="color: red" *ngIf="!formValid">Validation error!</div>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Username"
+    id="username"
+    name="username"
+    [(ngModel)]="username"
+  />
+  <br />
+  <input
+    type="password"
+    class="form-control"
+    placeholder="password"
+    id="password"
+    name="password"
+    [(ngModel)]="password"
+  />
+  <br />
+  <br />
+  <button type="submit">Submit</button>
+</form>

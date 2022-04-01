@@ -1,0 +1,39 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div style="color: red" *ngIf="name.errors">Incorrect name!</div>
+  <div style="color: red" *ngIf="email.errors">Incorrect email!</div>
+  <div style="color: red" *ngIf="message.errors">Incorrect message!</div>
+  {{ name.hasError | json }}
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Name"
+    id="name"
+    name="name"
+    [(ngModel)]="contact.name"
+    #name="ngModel"
+    required
+  /><br />
+  <input
+    type="password"
+    class="form-control"
+    placeholder="Email"
+    id="email"
+    name="email"
+    [(ngModel)]="contact.email"
+    #email="ngModel"
+    required
+  /><br />
+  <textarea
+    type="password"
+    class="form-control"
+    placeholder="Message"
+    id="message"
+    name="message"
+    [(ngModel)]="contact.message"
+    #message="ngModel"
+    required
+  ></textarea>
+  <br />
+  <br />
+  <button type="submit">Submit</button>
+</form>
